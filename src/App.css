@@ -1,10 +1,36 @@
 .App {
   text-align: center;
+  background-image: url('https://wallpapercave.com/wp/wp6991936.jpg');
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  padding: 25px;
+  color: white
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Weather-box{
+  width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    border: solid 1px;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    background: linear-gradient(rgba(2555,2555,2555,0),rgba(0,0,0,1));
+    justify-content: center; 
+}
+
+.form-container{
+  width: 100%;
+
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
