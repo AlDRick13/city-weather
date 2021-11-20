@@ -18,7 +18,7 @@ const CityContextProvider = ({children}) => {
                 );
             const result = await request.json();
             if (result.error) {
-                setError(result.message);
+                setError(true);
             } else {
                 setWeatherData(result)
                 setLoader(false);

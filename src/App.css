@@ -10,16 +10,12 @@
   padding: 25px;
   color: white
 }
-
-#myVideo {
+.video {
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
 }
-
-
-
 .Weather-box{
     margin: auto;
     margin-top: 20px;
