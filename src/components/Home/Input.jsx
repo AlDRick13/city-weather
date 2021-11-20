@@ -9,12 +9,11 @@ import CityContext from '../../context/CityContext'
 const Input = () => {
     const {setCity, handleSearchButton, city} = useContext(CityContext);
     return (
-        <div>
-            <div className="form-container">          
-                <input placeholder="City Name" onChange={e=>setCity(e.target.value)}/> 
-                <Link to={`/${city}`}><Button onClick={()=>handleSearchButton()} variant="outline-primary">Search!</Button></Link>
+            <div className=" form-container">          
+                <input className="p-1 text-black" placeholder="City Name" onChange={e=>setCity(e.target.value)}/> 
+                <Link to={`/${city}`}><Button className="p-2" onClick={()=>handleSearchButton()} variant="outline-primary">Search!</Button></Link>
             </div>
-        </div>
+        
     );
 };
 

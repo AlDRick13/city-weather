@@ -5,10 +5,12 @@ import { useLocation, Link} from 'react-router-dom';
 import {  Button } from 'react-bootstrap';
 //context
 import CityContext from '../../context/CityContext'
-
+//components
+import Loader from "../Loader/Loader"
+import FetchError from "../../components/FetchError"
 
 const WeatherBox = () => {
-    const {city, weatherData} = useContext(CityContext);
+    const {city, weatherData, loader, error} = useContext(CityContext);
     const {pathname} = useLocation()
     const showButtonOrInfo = () => {
         if (pathname === "/"+city){
@@ -24,22 +26,28 @@ const WeatherBox = () => {
     return (
         <>
             
-            {weatherData.current &&(
+           {error? (
+               <FetchError/>
+           ):
+            <>
+            {weatherData.current && !loader ?(
             
-                <div className="Weather-box">
-                    <h1>{weatherData.location.name} </h1>
-                <h2>{weatherData.location.region} </h2>
-                <h3>{weatherData.location.country}</h3>
-                <hr/>
-                <img src={weatherData.current.condition.icon} alt="weather" width={120} height={120} />
+            <div className="Weather-box w-2/5">
+                <h1>{weatherData.location.name} </h1>
+            <h2>{weatherData.location.region} </h2>
+            <h3>{weatherData.location.country}</h3>
+            <hr/>
+            <img className="m-auto" src={weatherData.current.condition.icon} alt="weather" width={120} height={120} />
+    
+            <h3>{weatherData.current.temp_c}°C</h3>
+            <hr/>
+            {showButtonOrInfo()}                
+            </div>
+            
         
-                <h3>{weatherData.current.temp_c}°C</h3>
-                <hr/>
-                {showButtonOrInfo()}                
-                </div>
-                
-            
-            )}
+        ): <Loader/>}
+            </>
+           }
             
       </>
     );

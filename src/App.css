@@ -11,8 +11,16 @@
   color: white
 }
 
+#myVideo {
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+
 .Weather-box{
-  width: 40%;
     margin: auto;
     margin-top: 20px;
     text-align: center;
@@ -27,7 +35,7 @@
 
 .form-container{
   width: 100%;
-
+  display: flex;
   align-items: center;
   justify-items: center;
   justify-content: center;

@@ -8,7 +8,7 @@ import WeatherBox from '../components/WeatherPage/WeatherBox';
 const WeatherPage = () => {
 
     
-  
+
     
     return   <WeatherBox />;
 };
